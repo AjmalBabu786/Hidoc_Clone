@@ -7,6 +7,8 @@ import 'package:hidoc/controller/netWorkServese.dart';
 import 'package:hidoc/view/HomeScreen/widgets.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../core/constent.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -65,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   Container(
                                     decoration: BoxDecoration(
-                                        color: Colors.blue[400],
+                                        color:mBlue,
                                         borderRadius: const BorderRadius.only(
                                             bottomLeft: Radius.circular(25),
                                             bottomRight: Radius.circular(10))),
@@ -121,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         boxShadow: const [
                                           BoxShadow(blurRadius: 2)
                                         ],
-                                        color: Colors.white,
+                                        color:mWhite,
                                         borderRadius:
                                             BorderRadius.circular(10)),
                                     child: Row(
@@ -152,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         BoxShadow(blurRadius: 2)
                                       ],
                                       borderRadius: BorderRadius.circular(10),
-                                      color: Colors.white,
+                                      color: mWhite,
                                     ),
                                     height: size.height * 0.46,
                                     width: size.width * double.infinity,
@@ -165,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             borderRadius: BorderRadius.only(
                                                 topLeft: Radius.circular(10),
                                                 topRight: Radius.circular(10)),
-                                            color: Colors.grey,
+                                            color: mGrey,
                                           ),
                                           height: size.height * 0.25,
                                           width: size.width * double.infinity,
@@ -214,13 +216,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                                     log(articles.redirectLink);
                                                     await _launchUrl(url: _url);
                                                   },
-                                                  child: const Text(
+                                                  child:  Text(
                                                     'Read full articles to earn points',
                                                     style: TextStyle(
                                                         decoration:
                                                             TextDecoration
                                                                 .underline,
-                                                        color: Colors.blue),
+                                                        color: mBlue),
                                                   ),
                                                 ),
                                               ),
@@ -233,7 +235,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           bottomRight:
                                                               Radius.circular(
                                                                   10)),
-                                                  color: Colors.blue[400],
+                                                  color: mBlue,
                                                 ),
                                                 height: size.height * 0.1,
                                                 width: size.width * 0.2,
@@ -267,7 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                                 BulletMainHead(Bullet: "Hidoc Bulletin"),
                                 ListView.builder(
-                                    physics: ScrollPhysics(),
+                                    physics: const ScrollPhysics(),
                                     shrinkWrap: true,
                                     itemCount: bulletin.length,
                                     itemBuilder: (context, index) {
@@ -280,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Container(
                                   // height: size.height * 0.9,
                                   decoration: BoxDecoration(
-                                      color: Colors.blue[100],
+                                      color: LightBlue,
                                       borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(20),
                                           topRight: Radius.circular(20))),
@@ -295,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             Bullet: "Trending Hidoc Bulletin"),
                                         ListView.builder(
                                             shrinkWrap: true,
-                                            physics: ScrollPhysics(),
+                                            physics: const ScrollPhysics(),
                                             itemCount: trendingBullet.length,
                                             itemBuilder: (context, index) {
                                               final item =
@@ -315,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 15),
                                   child: Container(
-                                    color: Colors.orange,
+                                    color: mOrenge,
                                     height: size.height * 0.05,
                                     width: size.width * 0.6,
                                     child: Center(
@@ -326,11 +328,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                           await _launchUrl(url: _url);
                                         },
-                                        child: Text(
+                                        child: const Text(
                                           "Read More Bulletins",
                                           style: TextStyle(
                                               fontWeight: FontWeight.w400,
-                                              color: Colors.white,
+                                              color: mWhite,
                                               fontSize: 17),
                                         ),
                                       ),
@@ -347,7 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ListView.builder(
                                         itemCount: trendingArticles.length,
                                         shrinkWrap: true,
-                                        physics: ScrollPhysics(),
+                                        physics: const ScrollPhysics(),
                                         itemBuilder: (context, index) {
                                           return TrendingArticlesDividerContainer(
                                               Discription:
@@ -358,7 +360,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Container(
@@ -374,13 +376,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                             Bullet: "Trending Articls"),
                                         ListView.builder(
                                             shrinkWrap: true,
-                                            physics: ScrollPhysics(),
+                                            physics: const ScrollPhysics(),
                                             itemCount: trendingArticles.length,
                                             itemBuilder: (context, index) {
                                               return Column(
                                                 children: [
                                                   Container(
-                                                    color: Colors.grey[400],
+                                                    color: lightGrey,
                                                     height: size.height * 0.2,
                                                     width: size.width *
                                                         double.infinity,
@@ -392,12 +394,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsets.symmetric(
+                                                        const EdgeInsets.symmetric(
                                                             vertical: 10),
                                                     child: Text(
                                                       trendingArticles[index]
                                                           .articleTitle,
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                           fontSize: 15),
                                                       maxLines: 2,
                                                     ),
@@ -410,14 +412,14 @@ class _HomeScreenState extends State<HomeScreen> {
                                           width: size.width * double.infinity,
                                           child: ListView.builder(
                                               shrinkWrap: true,
-                                              physics: ScrollPhysics(),
+                                              physics: const ScrollPhysics(),
                                               itemCount:
                                                   trendingArticles.length,
                                               itemBuilder: (context, index) {
                                                 return Row(
                                                   children: [
                                                     Container(
-                                                        color: Colors.grey[400],
+                                                        color: lightGrey,
                                                         height:
                                                             size.height * 0.1,
                                                         width: size.width * 0.2,
@@ -428,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                           fit: BoxFit.fill,
                                                         )),
                                                     Container(
-                                                      color: Colors.white,
+                                                      color: mWhite,
                                                       height: size.height * 0.1,
                                                       width: size.width * 0.60,
                                                       child: Center(
@@ -437,7 +439,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                   index]
                                                               .articleTitle,
                                                           maxLines: 3,
-                                                          style: TextStyle(
+                                                          style: const TextStyle(
                                                               fontSize: 15),
                                                         ),
                                                       ),
@@ -450,7 +452,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 20,
                                 ),
                                 Padding(
@@ -467,7 +469,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ListView.builder(
                                           itemCount: exploreMoreArticle.length,
                                           shrinkWrap: true,
-                                          physics: ScrollPhysics(),
+                                          physics: const ScrollPhysics(),
                                           itemBuilder: (context, index) {
                                             return TrendingArticlesDividerContainer(
                                                 Discription:
@@ -499,7 +501,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ],
                                 ),
                                 Container(
-                                  color: Colors.blue[50],
+                                  color: blue50,
                                   width: size.width * double.infinity,
                                   child: Column(
                                     crossAxisAlignment:
@@ -508,7 +510,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       BulletMainHead(Bullet: "News"),
                                       ListView.builder(
                                         shrinkWrap: true,
-                                        physics: ScrollPhysics(),
+                                        physics: const ScrollPhysics(),
                                         itemCount: news.length,
                                         itemBuilder: (context, index) {
                                           return Column(
@@ -518,8 +520,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 height: size.height * 0.16,
                                               ),
                                               Container(
-                                                color: const Color.fromARGB(
-                                                    255, 186, 178, 157),
+                                                color: customGrey,
                                                 height: size.height * 0.27,
                                                 width: size.width *
                                                     double.infinity,
@@ -560,7 +561,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: size.height * 0.1,
                                 ),
                                 Container(
-                                  color: Colors.orange[100],
+                                  color: orenge100,
                                   height: size.height * 0.1,
                                   width: size.width * double.infinity,
                                   child: Row(
@@ -581,7 +582,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ),
                                       Container(
                                         decoration: BoxDecoration(
-                                            color: Colors.amber,
+                                            color: mAmber,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
                                         height: size.height * 0.04,
@@ -594,7 +595,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                                             await _launchUrl(url: _url);
                                           },
-                                          child: Text(
+                                          child: const Text(
                                             "Visit",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
@@ -623,138 +624,4 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Container lastIconContainer(
-      {required Size size, required String Head, required String Subtitle}) {
-    return Container(
-      height: size.height * 0.09,
-      width: size.width * double.infinity,
-      child: Row(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.blue[50],
-                borderRadius: BorderRadius.circular(30)),
-            height: size.height * 0.08,
-            width: size.width * 0.16,
-            child: const Icon(
-              Icons.military_tech_outlined,
-              size: 35,
-              color: Colors.blue,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Container(
-              height: size.height * 0.3,
-              width: size.width * 0.3,
-              child: Text(
-                Head,
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-          Expanded(
-            child: Container(
-              height: size.height * 0.3,
-              child: Center(
-                child: Text(
-                  Subtitle,
-                  style: const TextStyle(fontSize: 15),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
-  }
-
-  Container moreButtons(
-      {required Size size, required double width, required String texts}) {
-    return Container(
-      color: Colors.orange,
-      height: size.height * 0.05,
-      child: Center(
-        child: Text(
-          texts,
-          style: const TextStyle(
-              fontWeight: FontWeight.w400, color: Colors.white, fontSize: 17),
-        ),
-      ),
-    );
-  }
-
-  TrendingArticlesDividerContainer({required String Discription}) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
-      child: Column(
-        children: [
-          const Padding(
-            padding: EdgeInsets.only(bottom: 10),
-            child: Divider(
-              height: 3,
-              thickness: 1,
-              color: Colors.grey,
-            ),
-          ),
-          Text(
-            Discription,
-            style: TextStyle(fontSize: 15),
-            maxLines: 2,
-          )
-        ],
-      ),
-    );
-  }
-
-  BulletMainHead({required String Bullet}) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Text(
-        Bullet,
-        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
-      ),
-    );
-  }
-
-  Container BulletinTextContainer(
-      {required Size size, required String Head, required String Subtitle}) {
-    return Container(
-      height: size.height * 0.2,
-      width: size.width * double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            color: Colors.blue[400],
-            height: size.height * 0.012,
-            width: size.width * 0.3,
-          ),
-          Text(
-            Head,
-            maxLines: 2,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
-          ),
-          Text(
-            Subtitle,
-            maxLines: 3,
-            style: const TextStyle(fontSize: 16),
-          ),
-          const Text(
-            "Read More",
-            style: TextStyle(
-                decoration: TextDecoration.underline, color: Colors.blue),
-          )
-        ],
-      ),
-    );
-  }
 }

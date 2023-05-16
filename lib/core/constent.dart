@@ -10,3 +10,4 @@ var lightGrey = Colors.grey[400];
 var blue50 = Colors.blue[50];
 var customGrey = Color.fromARGB(255, 186, 178, 157);
 const Color mAmber = Colors.amber;
+const Color ogBlue = Colors.blue;
